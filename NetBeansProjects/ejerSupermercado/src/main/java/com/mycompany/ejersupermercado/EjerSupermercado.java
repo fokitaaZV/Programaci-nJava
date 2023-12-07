@@ -50,6 +50,8 @@ public class EjerSupermercado {
                     numCompras++;
                 }
 
+                sc.close();
+
             }
 
             System.out.println("\nCompra de " + nombreCliente + ":");

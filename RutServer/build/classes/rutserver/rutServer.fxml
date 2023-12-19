@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="Interfaz" prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rutserver.RutServerController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu fx:id="Info" mnemonicParsing="false" text="Info">
+               <items>
+                  <MenuItem fx:id="InfoEspecifica" mnemonicParsing="false" onAction="#EjecutarInfo" text="InfoEspecifica" />
+               </items></Menu>
+        <Menu fx:id="ChangePort" mnemonicParsing="false" text="Change Port">
+               <items>
+                  <MenuItem fx:id="ChangePortEspecifica" mnemonicParsing="false" onAction="#EjecutarChangePort" text="ChangePortEspecifica" />
+               </items></Menu>
+        <Menu fx:id="HowToUse" mnemonicParsing="false" text="How To Use">
+               <items>
+                  <MenuItem fx:id="HowToUseEspecifica" mnemonicParsing="false" onAction="#EjecutarHowToUse" text="HowToUseEspecifica" />
+               </items></Menu>
+            <Menu fx:id="Quit" mnemonicParsing="false" text="Quit">
+               <items>
+                  <MenuItem fx:id="QuitEspecifica" mnemonicParsing="false" onAction="#EjecutarQuit" text="QuitEspecifica" />
+               </items></Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="InterfazPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ImageView fx:id="FotoRut1" fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@rutbase.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="FotoRut2" fitHeight="100.0" fitWidth="100.0" layoutX="736.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@rutnormal.jpeg" />
+               </image>
+            </ImageView>
+        <Label fx:id="Titulo" alignment="CENTER" layoutX="348.0" style="&#10;" text="Rut Server" textAlignment="CENTER" underline="true">
+          <font>
+            <Font size="34.0" />
+          </font>
+        </Label>
+            <TextArea fx:id="Comando" editable="false" layoutX="231.0" layoutY="51.0" prefHeight="100.0" prefWidth="390.0" />
+            <Label layoutX="22.0" layoutY="491.0" prefHeight="17.0" prefWidth="232.0" text="EJEMPLOS:" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="Conectar" layoutX="720.0" layoutY="510.0" mnemonicParsing="false" onAction="#EjecutarConectar" prefHeight="51.0" prefWidth="116.0" text="CONECTAR">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="Atacar" disable="true" layoutX="376.0" layoutY="164.0" mnemonicParsing="false" onAction="#EjecutarAtacar" prefHeight="51.0" prefWidth="100.0" text="ATACAR">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ToolBar fx:id="Ejemplos" disable="true" layoutX="14.0" layoutY="521.0" prefHeight="40.0" prefWidth="369.0">
+              <items>
+                <Button fx:id="MouseFlip" mnemonicParsing="false" onAction="#EjecutarMouseFlip" text="MOUSEFLIP" />
+                  <Button fx:id="Virus" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#EjecutarVirus" text="VIRUS" />
+                  <Button fx:id="ApagarPC" layoutX="66.0" layoutY="13.0" mnemonicParsing="false" onAction="#EjecutarApagarPC" text="APAGAR PC" />
+                  <Button fx:id="PaginaWebInfinita" layoutX="122.0" layoutY="13.0" mnemonicParsing="false" onAction="#EjecutarPagWebInf" text="PAGINA WEB INFINITA" />
+              </items>
+            </ToolBar>
+            <Pane fx:id="HowToUsePane" layoutX="551.0" layoutY="195.0" prefHeight="185.0" prefWidth="285.0" visible="false">
+               <children>
+                  <Label prefHeight="155.0" prefWidth="285.0" text="Primero, debes seleccionar puerto para iniciar el servidor. Luego pulsar el boton de conectar, si todo ha ido bien te aparecera un mensaje en el cuadro de texto diciendo que todo ha ido correctamente. Mas tarde deberas de atacar a la victima escribiendo algun comando en batch en el cuadro de texto (Puedes usar algun ejemplo de los botones de abajo). Tambien puedes ver la informacion del servidor y de la victima en el apartado de &quot;Info&quot;." wrapText="true" />
+                  <Button fx:id="HowToUseQuit" layoutX="121.0" layoutY="159.0" mnemonicParsing="false" onAction="#HowToUsePaneQuit" text="QUIT" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <Pane fx:id="InfoPane" layoutX="9.0" layoutY="215.0" prefHeight="145.0" prefWidth="257.0" visible="false">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="116.0" text=" IP Victima:" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="40.0" prefHeight="40.0" prefWidth="116.0" text="Puerto:" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="80.0" prefHeight="40.0" prefWidth="116.0" text="Estado:" wrapText="true">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="214.0" layoutY="119.0" mnemonicParsing="false" onAction="#InfoPaneQuit" text="QUIT" />
+                  <TextField fx:id="IPVictima" editable="false" layoutX="77.0" layoutY="8.0" />
+                  <TextField fx:id="Puerto" editable="false" layoutX="77.0" layoutY="48.0" />
+                  <TextField fx:id="Estado" editable="false" layoutX="77.0" layoutY="88.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Pane>
+            <Pane fx:id="ChangePortPane" layoutX="425.0" layoutY="516.0" prefHeight="51.0" prefWidth="232.0">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="116.0" text="PORT:" />
+                  <TextField fx:id="ChangePortTF" layoutX="75.0" layoutY="13.0" onInputMethodTextChanged="#PuertoCambiado" />
+               </children>
+            </Pane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
